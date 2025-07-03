@@ -5,20 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sowrov এর ড্যাশবোর্ড</title>
   <style>
-    body {
-      margin: 0;
+    body, html {
+      margin: 0; padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', Tahoma, sans-serif;
       background: #f1f5f9;
+      transition: all 0.3s ease;
+    }
+
+    #startScreen {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      color: white;
+      font-size: 4rem;
+      font-weight: 900;
+      cursor: pointer;
+      user-select: none;
+      letter-spacing: 5px;
+    }
+
+    #dashboardLayout {
+      display: none;
+      height: 100vh;
       display: flex;
     }
+
     .sidebar {
       width: 220px;
       background: linear-gradient(135deg, #2563eb, #1e40af);
       color: #fff;
-      height: 100vh;
-      position: fixed;
       padding: 20px 10px;
       box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      position: fixed;
+      top: 0; left: 0;
     }
     .sidebar h2 {
       text-align: center;
@@ -35,16 +60,22 @@
       margin-bottom: 10px;
       border-radius: 8px;
       font-weight: 600;
+      cursor: pointer;
     }
     .sidebar a:hover, .sidebar a.active {
       background: #1d4ed8;
       color: #fff;
     }
+
     main {
       margin-left: 220px;
       padding: 30px;
       flex: 1;
+      overflow-y: auto;
+      height: 100vh;
+      background: #f1f5f9;
     }
+
     header {
       display: flex;
       align-items: center;
@@ -64,6 +95,7 @@
       font-weight: 900;
       box-shadow: 0 4px 10px rgba(59,130,246,0.5);
     }
+
     marquee {
       display: block;
       background: #bfdbfe;
@@ -73,12 +105,17 @@
       margin-bottom: 20px;
       font-weight: bold;
     }
+
     section {
       background: #fff;
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin-bottom: 20px;
+      display: none; /* সেকশনগুলো লুকানো থাকবে */
+    }
+    section.active {
+      display: block; /* active সেকশন দেখাবে */
     }
     section h2 {
       font-size: 1.8rem;
@@ -103,108 +140,82 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
-    #preview {
-      margin-top: 15px;
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(30,64,175,0.3);
-      display: none;
-    }
   </style>
 </head>
 <body>
 
-  <div class="sidebar">
-    <h2>ড্যাশবোর্ড</h2>
-    <a href="#home" class="active">হোম</a>
-    <a href="#content">কনটেন্ট</a>
-    <a href="#contact">যোগাযোগ</a>
+  <div id="startScreen" title="Click to enter dashboard">ড্যাশবোর্ড</div>
+
+  <div id="dashboardLayout">
+    <div class="sidebar">
+      <h2>ড্যাশবোর্ড</h2>
+      <a data-target="home" class="active">হোম</a>
+      <a data-target="content">কনটেন্ট</a>
+      <a data-target="contact">যোগাযোগ</a>
+    </div>
+
+    <main>
+      <header>
+        <div class="logo">S</div>
+        <h1>Sowrov</h1>
+      </header>
+
+      <marquee scrollamount="5">আমার প্রথম ওয়েবসাইটে স্বাগতম — Sowrov এর ব্যক্তিগত ড্যাশবোর্ড</marquee>
+
+      <section id="home" class="active">
+        <h2>হোম</h2>
+        <p>এটা হলো ড্যাশবোর্ডের প্রথম পেজ।</p>
+        <p>মোহনগঞ্জ, নেত্রকোনা বাসিন্দা। নেত্রকোনা সরকারি কলেজের বিজ্ঞান বিভাগের ছাত্র।</p>
+      </section>
+
+      <section id="content">
+        <h2>কনটেন্ট</h2>
+        <p>সময় সম্পর্কে আমার নিজের লেখা শেয়ার করা হয়েছে।</p>
+        <p>(১) সময় বলতে কিছু না-- (যা একটি শব্দ) -- {পৃথিবীর আহ্নিক এবং বার্ষিক গতির ফলে অতিবাহিত মধ্যবর্তী স্থানটিকে সময় বলে}</p>
+        <p>(২) সময় মূলত জীবনের (জন্ম-মৃত্যু) ধারাবাহিকতা।</p>
+        <p>(৩) পৃথিবীর দিন রাত্রি হওয়ার ক্রমান্বয় টা হচ্ছে সময়।</p>
+        <p>(৪) "অপেক্ষা" শব্দটি সম্পূর্ণ ভাবে নির্ভর করে সময়ের উপর।</p>
+        <p>(৫) এভাবে বলা যায় মানুষের রক্ত সঞ্চালনটাই সময়।</p>
+      </section>
+
+      <section id="contact">
+        <h2>যোগাযোগ</h2>
+        <div class="contact-info">
+          <p>ফোন: <a href="tel:+8801606672228">01606672228</a></p>
+          <p>Facebook: <a href="https://www.facebook.com/shurovkhan.82" target="_blank">facebook.com/shurovkhan.82</a></p>
+          <p>বাড়ি: মোহনগঞ্জ, নেত্রকোনা</p>
+          <p>কলেজ: নেত্রকোনা সরকারি কলেজ (বিজ্ঞান বিভাগ)</p>
+        </div>
+      </section>
+    </main>
   </div>
 
-  <main>
-    <header>
-      <div class="logo">S</div>
-      <h1>Sowrov</h1>
-    </header>
-
-    <marquee scrollamount="5">আমার প্রথম ওয়েবসাইটে স্বাগতম — Sowrov এর ব্যক্তিগত ড্যাশবোর্ড</marquee>
-
-    <section id="home">
-      <h2>হোম</h2>
-      <div style="
-        background: #f0f9ff;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(59,130,246,0.15);
-      ">
-        <p style="font-size:1.2rem; color:#1e3a8a; font-weight:bold; margin-bottom:10px;">
-          🌟 আমি Sowrov
-        </p>
-        <p style="font-size:1.1rem; color:#334155; line-height:1.7;">
-          মোহনগঞ্জ, নেত্রকোনা বাসিন্দা।<br>
-          নেত্রকোনা সরকারি কলেজের বিজ্ঞান বিভাগের ছাত্র।<br>
-          আমি সময় নিয়ে নিজের কিছু চিন্তা ও লেখা শেয়ার করেছি এই সাইটে।
-        </p>
-        <img src="https://uploads.onecompiler.io/43nf3b8nx/43pjmdvq2/3875.jpg"
-             alt="Sowrov এর ছবি"
-             style="max-width:300px; border-radius:12px; margin-top:15px; box-shadow:0 6px 20px rgba(30,64,175,0.3);">
-      </div>
-    </section>
-
-    <section id="content">
-      <h2>কনটেন্ট</h2>
-      <div style="
-        background: #e0f2fe;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(59,130,246,0.2);
-      ">
-        <h3 style="
-          color: #1e40af;
-          font-size: 1.5rem;
-          font-weight: bold;
-          border-bottom: 2px solid #60a5fa;
-          padding-bottom: 5px;
-          margin-bottom: 10px;
-        ">
-          সময় সম্পর্কে আমার নিজের লেখা
-        </h3>
-        <p style="font-size:1.1rem; color:#334155; line-height:1.7;">
-          (১) সময় বলতে কিছু না-- (যা একটি শব্দ) -- {পৃথিবীর আহ্নিক এবং বার্ষিক গতির ফলে অতিবাহিত মধ্যবর্তী স্থানটিকে সময় বলে}<br>
-          (২) সময় মূলত জীবনের (জন্ম-মৃত্যু) ধারাবাহিকতা।<br>
-          (৩) পৃথিবীর দিন রাত্রি হওয়ার ক্রমান্বয় টা হচ্ছে সময়।<br>
-          (৪) "অপেক্ষা" শব্দটি সম্পূর্ণ ভাবে নির্ভর করে সময়ের উপর।<br>
-          (৫) এভাবে বলা যায় মানুষের রক্ত সঞ্চালনটাই সময়।
-        </p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>যোগাযোগ</h2>
-      <div class="contact-info">
-        <p>ফোন: <a href="tel:+8801606672228">01606672228</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/shurovkhan.82" target="_blank">https://www.facebook.com/shurovkhan.82</a></p>
-        <p>বাড়ি: মোহনগঞ্জ, নেত্রকোনা</p>
-        <p>কলেজ: নেত্রকোনা সরকারি কলেজ (বিজ্ঞান বিভাগ)</p>
-      </div>
-    </section>
-
-  </main>
-
   <script>
-    // Active link highlighting
+    const startScreen = document.getElementById('startScreen');
+    const dashboardLayout = document.getElementById('dashboardLayout');
     const links = document.querySelectorAll('.sidebar a');
-    window.addEventListener('scroll', () => {
-      let fromTop = window.scrollY + 100;
-      links.forEach(link => {
-        const section = document.querySelector(link.getAttribute('href'));
-        if (
-          section.offsetTop <= fromTop &&
-          section.offsetTop + section.offsetHeight > fromTop
-        ) {
-          links.forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        }
+    const sections = document.querySelectorAll('section');
+
+    startScreen.addEventListener('click', () => {
+      startScreen.style.display = 'none';
+      dashboardLayout.style.display = 'flex';
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        // active ক্লাস বদলানো
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        // সেকশন লুকানো এবং active সেকশন দেখানো
+        const target = link.getAttribute('data-target');
+        sections.forEach(sec => {
+          if (sec.id === target) {
+            sec.classList.add('active');
+          } else {
+            sec.classList.remove('active');
+          }
+        });
       });
     });
   </script>

@@ -3,72 +3,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sowrov এর ব্যক্তিগত ওয়েবসাইট</title>
+  <title>Sowrov এর ড্যাশবোর্ড</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
       margin: 0;
-      padding: 20px;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f1f5f9;
+      display: flex;
+    }
+    .sidebar {
+      width: 220px;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      color: #fff;
+      height: 100vh;
+      position: fixed;
+      padding: 20px 10px;
+      box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .sidebar a {
+      display: block;
+      color: #cbd5e1;
+      padding: 12px 15px;
+      text-decoration: none;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .sidebar a:hover, .sidebar a.active {
+      background: #1d4ed8;
+      color: #fff;
+    }
+    main {
+      margin-left: 220px;
+      padding: 30px;
+      flex: 1;
     }
     header {
-      background: #0077cc;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
     }
-    section {
-      margin-top: 20px;
-      background: white;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    img {
-      max-width: 150px;
+    .logo {
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      display: block;
-      margin: 10px auto;
-    }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      background: radial-gradient(circle at top left, #3b82f6, #1e40af);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 900;
+      box-shadow: 0 4px 10px rgba(59,130,246,0.5);
     }
     marquee {
-      color: green;
-      font-size: 20px;
-      margin-bottom: 20px;
       display: block;
+      background: #bfdbfe;
+      color: #1e3a8a;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      color: #1d4ed8;
+      border-bottom: 2px solid #93c5fd;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+    section p {
+      font-size: 1.1rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+    .contact-info p {
+      margin: 6px 0;
+    }
+    .contact-info a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    #preview {
+      margin-top: 15px;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(30,64,175,0.3);
+      display: none;
     }
   </style>
 </head>
 <body>
-  <marquee>আমার প্রথম ওয়েবসাইটে স্বাগতম!</marquee>
-  
-  <header>
-    <h1>Sowrov এর ব্যক্তিগত ওয়েবসাইট</h1>
-  </header>
-  
-  <section>
-    <img src="https://uploads.onecompiler.io/43nf3b8nx/43pjmdvq2/3875.jpg" alt="Sowrov" />
-    <h2>পরিচিতি</h2>
-    <p>আমি Sowrov, মোহনগঞ্জ, নেত্রকোনা সরকারি কলেজের বিজ্ঞান বিভাগের ছাত্র।</p>
-  </section>
-  
-  <section>
-    <h2>সময় সম্পর্কে আমার নিজের লেখা</h2>
-    <p>সময় বলতে কিছু না-- (যা একটি শব্দ) -- {পৃথিবীর আহ্নিক এবং বার্ষিক গতির ফলে অতিবাহিত মধ্যবর্তী স্থানটিকে সময় বলে}। সময় মূলত জীবনের(জন্ম-মৃত্যু) ধারাবাহিকতা। পৃথিবীর দিন রাত্রি হওয়ার ক্রমান্বয় টা হচ্ছে সময়। "অপেক্ষা" শব্দটি সম্পূর্ণ ভাবে নির্ভর করে সময়ের উপর। এভাবে বলা যায় মানুষের রক্ত সঞ্চালনটাই সময়।</p>
-  </section>
-  
-  <section>
-    <h2>যোগাযোগ</h2>
-    <p>ফোন: 01606672228</p>
-    <p>Facebook: <a href="https://www.facebook.com/shurovkhan.82" target="_blank">shurovkhan.82</a></p>
-  </section>
+
+  <div class="sidebar">
+    <h2>ড্যাশবোর্ড</h2>
+    <a href="#home" class="active">হোম</a>
+    <a href="#content">কনটেন্ট</a>
+    <a href="#contact">যোগাযোগ</a>
+  </div>
+
+  <main>
+    <header>
+      <div class="logo">S</div>
+      <h1>Sowrov</h1>
+    </header>
+
+    <marquee scrollamount="5">আমার প্রথম ওয়েবসাইটে স্বাগতম — Sowrov এর ব্যক্তিগত ড্যাশবোর্ড</marquee>
+
+    <section id="home">
+      <h2>হোম</h2>
+      <div style="
+        background: #f0f9ff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(59,130,246,0.15);
+      ">
+        <p style="font-size:1.2rem; color:#1e3a8a; font-weight:bold; margin-bottom:10px;">
+          🌟 আমি Sowrov
+        </p>
+        <p style="font-size:1.1rem; color:#334155; line-height:1.7;">
+          মোহনগঞ্জ, নেত্রকোনা বাসিন্দা।<br>
+          নেত্রকোনা সরকারি কলেজের বিজ্ঞান বিভাগের ছাত্র।<br>
+          আমি সময় নিয়ে নিজের কিছু চিন্তা ও লেখা শেয়ার করেছি এই সাইটে।
+        </p>
+        <img src="https://uploads.onecompiler.io/43nf3b8nx/43pjmdvq2/3875.jpg"
+             alt="Sowrov এর ছবি"
+             style="max-width:300px; border-radius:12px; margin-top:15px; box-shadow:0 6px 20px rgba(30,64,175,0.3);">
+      </div>
+    </section>
+
+    <section id="content">
+      <h2>কনটেন্ট</h2>
+      <div style="
+        background: #e0f2fe;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(59,130,246,0.2);
+      ">
+        <h3 style="
+          color: #1e40af;
+          font-size: 1.5rem;
+          font-weight: bold;
+          border-bottom: 2px solid #60a5fa;
+          padding-bottom: 5px;
+          margin-bottom: 10px;
+        ">
+          সময় সম্পর্কে আমার নিজের লেখা
+        </h3>
+        <p style="font-size:1.1rem; color:#334155; line-height:1.7;">
+          (১) সময় বলতে কিছু না-- (যা একটি শব্দ) -- {পৃথিবীর আহ্নিক এবং বার্ষিক গতির ফলে অতিবাহিত মধ্যবর্তী স্থানটিকে সময় বলে}<br>
+          (২) সময় মূলত জীবনের (জন্ম-মৃত্যু) ধারাবাহিকতা।<br>
+          (৩) পৃথিবীর দিন রাত্রি হওয়ার ক্রমান্বয় টা হচ্ছে সময়।<br>
+          (৪) "অপেক্ষা" শব্দটি সম্পূর্ণ ভাবে নির্ভর করে সময়ের উপর।<br>
+          (৫) এভাবে বলা যায় মানুষের রক্ত সঞ্চালনটাই সময়।
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>যোগাযোগ</h2>
+      <div class="contact-info">
+        <p>ফোন: <a href="tel:+8801606672228">01606672228</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/shurovkhan.82" target="_blank">https://www.facebook.com/shurovkhan.82</a></p>
+        <p>বাড়ি: মোহনগঞ্জ, নেত্রকোনা</p>
+        <p>কলেজ: নেত্রকোনা সরকারি কলেজ (বিজ্ঞান বিভাগ)</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Active link highlighting
+    const links = document.querySelectorAll('.sidebar a');
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 100;
+      links.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
